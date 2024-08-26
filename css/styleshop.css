@@ -1,0 +1,75 @@
+body {
+    font-family: "ＭＳ Ｐゴシック";
+    margin: 0;
+}
+
+header {
+    background-color: #d7f2fe;
+    color: #002d52;
+    padding: 20px;
+    text-align: center;
+}
+
+#counter{
+    size: 18px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.item {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.item img {
+    cursor: pointer;
+}
+
+#cart {
+    background-color: #d7f2fe;
+    border: 1px solid #002d52;
+    margin: 20px;
+    padding: 20px;
+}
+
+#cart h2 {
+    margin-top: 0;
+}
+
+#cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+#cart-items li {
+    margin: 5px;
+}
+
+#total {
+    font-weight: bold;
+}
+
+footer{
+    text-align: center;
+}
+button {
+    background-color: #002d52;
+    color: #d7f2fe;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  button:hover {
+    background-color: #002d52;
+  }

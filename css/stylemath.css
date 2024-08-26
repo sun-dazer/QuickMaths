@@ -1,0 +1,60 @@
+body {
+    color: #002d52;
+    background-color: #d7f2fe;
+    font-family: "ＭＳ Ｐゴシック";
+    margin: 0;
+    font-size: 20px;
+    font-weight: border;
+    margin-left: 2rem;
+}
+
+button {
+    background-color: #002d52;
+    color: #d7f2fe;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    text-align: center;
+}
+
+h1 {
+    font-size: 35px;
+    margin: 0;
+    text-align: center;
+}
+
+h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    background: white;
+}
+
+
+form {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="radio"] {
+    margin-right: 10px;
+}
+.question1, .question2, .question3, .question4, .question5, .question6, .question7, .question8, .question9, .question10 {
+    margin-bottom: 20px;
+    color: black;
+}
+.answers1, .answers2, .answers3, .answers4, .answers5, .answers6, .answers7, .answers8, .answers9, .answers10  {
+    margin-left: 30px;
+    color: black;
+}

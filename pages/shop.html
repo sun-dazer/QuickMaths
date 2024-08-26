@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Final project: Shop</title>
+    <link type="text/css" rel="stylesheet" href="css/styleshop.css"/> 
+    <script type="text/javascript" src="js/mathscripts.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the shop!</h1>
+        <p>Please click on an item to buy it. It is inadvisable to buy two of the same item. They will not show up on your character separately. The number of points you get equals to number correct times 20.</p> 
+    </header>
+    <div>
+        <!--updatable counter of points-->
+        <p id = "counter">Your points: $0</p>
+    </div>
+    <main> 
+        <!--clickable items with price displayed-->
+        <div class="item">
+            <img id = "1" src="1.png" alt="hat" onclick="buyItem('hat', 20)">
+            <p>hat</p>
+            <p>$20</p>
+        </div>
+        <div class="item">
+            <img id = "2" src="2.png" alt="scarf" onclick="buyItem('scarf', 15)">
+            <p>scarf</p>
+            <p>$15</p>
+        </div>
+        <div class="item">
+            <img id = "3" src="3.png" alt="pet" onclick="buyItem('animal friend', 50)">
+            <p>pet</p>
+            <p>$50</p>
+        </div>
+    </main>
+    <div id="cart"> 
+        <h2>cart:</h2>
+        <ul id="cart-items">
+            <!-- cart items go here -->
+            <li>
+                <img id = "resultimg" src="bunny.png">
+            </li>
+        </ul>
+        <!--total that is updated after every purchase-->
+        <p id="total">total: $0</p>
+    </div>
+
+    <script> 
+        //below code declares the variables used in the javascript
+
+        //this code gives you the number of correct answers, use the variable to get to it
+        //accesses the result element from mathscripts.js
+        const correct = localStorage.getItem('correct');
+        //use localStorage.getItem('animal') for the animal 
+        const avatar = localStorage.getItem('animal');
+        let tracker = "";
+        let points = 0;
+        let purchaseTracker = "bun";
+
+        //updates the result image to match the choice the user made
+        if (avatar === "cat"){
+            document.getElementById("resultimg").src = "cat.png";
+            purchaseTracker = "cat";
+        }
+
+        function call()
+        {
+            let a = String(correct);
+            document.getElementById('result').innerHTML = a;
+        }
+
+        //sets the number of points and updates the counter
+        points = correct * 10;
+        counter.innerText = 'Your points: $' + points;
+
+        //function to buy an item
+        function buyItem(itemName, price) {
+            //sets an alert for if the customer doesn't have money
+            
+            if (points < price) {
+                alert('You do not have enough money to buy this item.');
+                return;
+            }
+            //if they have enough points, confirms that they want to buy it, subtracts it from total points, 
+            if (points >= price) {
+                if (confirm('Are you sure you want to buy ' + itemName + '?')) {
+                points -= price;
+                    
+                var cartItems = document.getElementById('cart-items');
+                var item = document.createElement('li');
+                item.innerText = itemName + '     -     $' + price;
+                cartItems.appendChild(item);
+                switch (itemName){
+                    case "hat":
+                        if(purchaseTracker.includes("1") === false){
+                            if(purchaseTracker.includes("2") === true || purchaseTracker.includes("3") === true){
+                                purchaseTracker = purchaseTracker.substr(0,3) + "1" + purchaseTracker.substr(3);
+                            } 
+                            else{
+                                purchaseTracker += "1";
+                            }
+                        }
+                        break;
+                    case "scarf":
+                        if(purchaseTracker.includes("2") === false){
+                            if(purchaseTracker.includes("1") === true && purchaseTracker.includes("3") === true){
+                                if(avatar === "bunny"){
+                                    purchaseTracker = "bun123";
+                                }
+                                else{
+                                    purchaseTracker = avatar + "123";
+                                }
+                            }
+                            else if(purchaseTracker.includes("3") === true && purchaseTracker.includes("1") == false){
+                                if(avatar === "bunny"){
+                                    purchaseTracker = "bun23";
+                                }
+                                else{
+                                    purchaseTracker = avatar + "23";
+                                }
+                            } 
+                            else{
+                                purchaseTracker += "2";
+                            }
+    
+                        }
+                        break;
+                    case "animal friend":
+                        if(purchaseTracker.includes("3") === false){  
+                            purchaseTracker += "3";                    
+                        }
+                        break;    
+                }
+
+                document.getElementById("resultimg").src = purchaseTracker + ".png";
+                
+                var total = document.getElementById('total');
+                total.innerText = 'total: $' + (parseInt(total.innerText.substring(8)) + price);
+                alert('You bought ' + itemName + ' for $' + price + '!');
+                counter.innerText = 'Your points: $' + points;
+            }
+            }
+        }
+    </script>
+</body>
+<footer>
+    <button id="retry" onclick="window.location.href='intro.html'">Try again?</button>
+    <button id="leader" onclick="window.location.href='form.php'">See Leaderboard</button>
+    <!--<button onclick="window.location.href='create.php'">Create Leaderboard</button>-->
+</footer>
+</html>

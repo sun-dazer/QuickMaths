@@ -1,0 +1,39 @@
+Checklist of things to include for final project:
+	1. front page:   
+    - introduction to what this is about 
+    - allows user name input
+    - pick male or female character
+    - start button
+	2. 2 pages, one for mult choice math and one for fill in the blank
+		1. a question could be in one column and an answer could be in a column to show that we can do that...
+		2. display correct or incorrect in different colors
+		3. form confirmation for each question
+		4. multiple choice math questions to for the multiple choice thing
+		5. fill in the blank grammar questions
+		6. each question right gives you points.
+	3. images for each page maybe different sizes if we want to idk
+	4. shop with clickable images.
+		1. if you spend too much at the shop, an error would pop up.
+        2. link it after every question 
+
+
+The guidelines are flexible and general, so that you can be more free to pick a project idea. The guidelines are as follows:
+
+(1.) It should be a full-stack project, which is a big word that simply means that the project should have a front-end part and a back-end part.
+
+(2.) It should utilize the following technologies: HTML, CSS, JavaScript, PHP and MySQL.
+
+
+The final project will be split into two phases, which are Phase 1 and Phase 2, and there will be two deadline dates for the final project, as follows:
+
+(1.) Phase 1 is due on Friday, April 14, 2023 @ 11:59 PM: Submit some part of the code base for the application that you will be implementing for your final project. It is advisable that the code base, which you submit for this Phase 1 of the final project, is about 50% of the total code base that you will be writing for the final project.
+
+(2.) Phase 2 is due on Friday, April 28, 2023 @ 11:59 PM: Submit all parts of the code base (i.e., the entire code base) for the application that you will be implementing for your final project. This code base is 100% of the total code base that you will be writing for the final project.
+
+The week of finals will be spent making oral presentations on the final project. For groups with multiple members, each member of the group will provide an oral presentation on their contribution to the development of the project. The total marks for the final project will be split into both marks for the implemented project and marks for the oral presentation, as follows:
+
+(3.) Marks for the implemented project: 50% of the total marks for the final project.
+
+(4.) Marks for the oral presentation: 50% of the total marks for the final project.
+
+This announcement is closed for comments
